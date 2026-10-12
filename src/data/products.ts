@@ -1,0 +1,172 @@
+import type { Product } from '../types';
+
+export const INITIAL_PRODUCTS: Product[] = [
+  {
+    id: 'prod-1',
+    name: 'Atelier Signature Flat White',
+    description: 'Двойной шот высокогорной арабики Эфиопия Иргачефф и бархатистое фермерское молоко с нотами молочного шоколада и жасмина.',
+    price: 2400,
+    category: 'coffee',
+    imageUrl: 'https://images.unsplash.com/photo-1577968897966-3d4325b36b61?auto=format&fit=crop&w=800&q=80',
+    isAvailable: true,
+    volume: '220 мл',
+    featured: true,
+    sortOrder: 1
+  },
+  {
+    id: 'prod-2',
+    name: 'Фильтр-кофе Geisha Panama',
+    description: 'Лёгкое, чистое тело с комплексным букетом: бергамот, белый персик, цветки апельсина и деликатная чайная кислотность.',
+    price: 2800,
+    category: 'coffee',
+    imageUrl: 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=800&q=80',
+    isAvailable: true,
+    volume: '250 мл',
+    featured: true,
+    sortOrder: 2
+  },
+  {
+    id: 'prod-3',
+    name: 'Классический Капучино',
+    description: 'Идеальный баланс эспрессо плотной текстуры и микропены сливочного молока. Орехово-карамельный профиль.',
+    price: 2100,
+    category: 'coffee',
+    imageUrl: 'https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=800&q=80',
+    isAvailable: true,
+    volume: '200 мл',
+    featured: true,
+    sortOrder: 3
+  },
+  {
+    id: 'prod-4',
+    name: 'Эспрессо Соло Colombia Huila',
+    description: 'Концентрированный шот с яркими нотами красного яблока, тростникового сахара и долгоиграющим шоколадным послевкусием.',
+    price: 1600,
+    category: 'coffee',
+    imageUrl: 'https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=800&q=80',
+    isAvailable: true,
+    volume: '40 мл',
+    featured: false,
+    sortOrder: 4
+  },
+  {
+    id: 'prod-5',
+    name: 'Лавандовый Раф',
+    description: 'Нежнейший кофейный десертный напиток со взбитыми сливками и натуральной крымской лавандой.',
+    price: 2600,
+    category: 'coffee',
+    imageUrl: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80',
+    isAvailable: true,
+    volume: '300 мл',
+    featured: false,
+    sortOrder: 5
+  },
+  {
+    id: 'prod-6',
+    name: 'Матча Латте Uji Ceremony',
+    description: 'Органическая церемониальная матча первого сбора из Киото на овсяном или цельном молоке.',
+    price: 2600,
+    category: 'tea',
+    imageUrl: 'https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=800&q=80',
+    isAvailable: true,
+    volume: '250 мл',
+    featured: true,
+    sortOrder: 6
+  },
+  {
+    id: 'prod-7',
+    name: 'Гречишный чай Ку Цяо',
+    description: 'Татарский гречишный чай с мягким вкусом овсяного печенья, свежей выпечки и карамели. Без кофеина.',
+    price: 1900,
+    category: 'tea',
+    imageUrl: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
+    isAvailable: true,
+    volume: '400 мл',
+    featured: false,
+    sortOrder: 7
+  },
+  {
+    id: 'prod-8',
+    name: 'Сенча Свежий Сбор',
+    description: 'Японский зелёный чай деликатной пропарки с морскими минеральными нотами и освежающим травянистым вкусом.',
+    price: 2000,
+    category: 'tea',
+    imageUrl: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=800&q=80',
+    isAvailable: true,
+    volume: '400 мл',
+    featured: false,
+    sortOrder: 8
+  },
+  {
+    id: 'prod-9',
+    name: 'Cold Brew Vanilla Foam',
+    description: 'Холодное настаивание спешелти зерна в течение 18 часов под шапкой плотной холодной ванильной пены.',
+    price: 2700,
+    category: 'cold',
+    imageUrl: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&w=800&q=80',
+    isAvailable: true,
+    volume: '350 мл',
+    featured: true,
+    sortOrder: 9
+  },
+  {
+    id: 'prod-10',
+    name: 'Эспрессо-Тоник с грейпфрутом',
+    description: 'Освежающий микс крафтового индийского тоника, двойного эспрессо и свежевыжатого сока розового грейпфрута.',
+    price: 2500,
+    category: 'cold',
+    imageUrl: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80',
+    isAvailable: true,
+    volume: '350 мл',
+    featured: false,
+    sortOrder: 10
+  },
+  {
+    id: 'prod-11',
+    name: 'Каскара Лимонад',
+    description: 'Игристый прохладительный напиток из высушенной мякоти кофейных ягод, шиповника и сока юдзу.',
+    price: 2400,
+    category: 'cold',
+    imageUrl: 'https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&w=800&q=80',
+    isAvailable: true,
+    volume: '350 мл',
+    featured: false,
+    sortOrder: 11
+  },
+  {
+    id: 'prod-12',
+    name: 'Баскский Чизкейк Сан-Себастьян',
+    description: 'Обожжённая карамельная корочка и ультранежная кремовая текстура с натуральной мадагаскарской ванилью.',
+    price: 3200,
+    category: 'desserts',
+    imageUrl: 'https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=800&q=80',
+    isAvailable: true,
+    volume: '180 г',
+    featured: true,
+    sortOrder: 12
+  },
+  {
+    id: 'prod-13',
+    name: 'Круассан с миндальным франжипаном',
+    description: 'Классический французский круассан на сливочном масле 82.5%, пропитанный сиропом и запечённый с миндальным кремом.',
+    price: 2400,
+    category: 'desserts',
+    imageUrl: 'https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=800&q=80',
+    isAvailable: true,
+    volume: '140 г',
+    featured: false,
+    sortOrder: 13
+  },
+  {
+    id: 'prod-14',
+    name: 'Шоколадный Тарт с морской солью',
+    description: 'Песочная основа сабле, ганаш из тёмного бельгийского шоколада 70% и хрустящие кристаллы соли Fleur de Sel.',
+    price: 2900,
+    category: 'desserts',
+    imageUrl: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=800&q=80',
+    isAvailable: false,
+    volume: '130 г',
+    featured: false,
+    sortOrder: 14
+  }
+];
