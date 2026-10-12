@@ -45,7 +45,7 @@ export const Footer: React.FC = () => {
               </li>
               <li>
                 <Link to="/admin" className="hover:text-white transition-colors">
-                  Панель администратора
+                  Демо-панель управления
                 </Link>
               </li>
             </ul>
@@ -96,8 +96,8 @@ export const Footer: React.FC = () => {
 
         {/* Copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#D8C6AE]/60 font-light space-y-3 sm:space-y-0">
-          <p>© {new Date().getFullYear()} ATELIER COFFEE. Все права защищены.</p>
-          <p className="tracking-wide">Портфолио веб-разработчика • React + Supabase + Tailwind</p>
+          <p>© {new Date().getFullYear()} ATELIER COFFEE. Демонстрационный проект для портфолио.</p>
+          <p className="tracking-wide">React + TypeScript + Tailwind CSS</p>
         </div>
       </div>
     </footer>

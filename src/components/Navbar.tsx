@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { ShoppingBag, Menu, X, Coffee, Shield } from 'lucide-react';
+import { ShoppingBag, Menu, X, Coffee, SlidersHorizontal } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 
 export const Navbar: React.FC = () => {
@@ -56,15 +56,15 @@ export const Navbar: React.FC = () => {
             ))}
           </nav>
 
-          {/* Actions: Admin link + Cart button */}
+          {/* Actions: Demo Console link + Cart button */}
           <div className="flex items-center space-x-5">
             <Link
               to="/admin"
-              title="Панель администратора"
+              title="Демонстрационная панель управления"
               className="hidden sm:flex items-center text-xs text-[#7E7066] hover:text-[#30251F] uppercase tracking-wider transition-colors px-2.5 py-1.5 rounded border border-[#D8C6AE]/40 hover:border-[#30251F]/40"
             >
-              <Shield className="w-3.5 h-3.5 mr-1" />
-              Админ
+              <SlidersHorizontal className="w-3.5 h-3.5 mr-1" />
+              Демо-панель
             </Link>
 
             <Link
@@ -115,8 +115,8 @@ export const Navbar: React.FC = () => {
               onClick={() => setMobileMenuOpen(false)}
               className="pt-2 text-xs text-[#7E7066] flex items-center uppercase tracking-wider"
             >
-              <Shield className="w-4 h-4 mr-1.5" />
-              Управление / Админ-панель
+              <SlidersHorizontal className="w-4 h-4 mr-1.5" />
+              Демо-панель управления
             </Link>
           </div>
         </div>

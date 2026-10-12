@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { CheckCircle2, ShoppingBag, ArrowLeft, Loader2, MapPin, Store, AlertCircle } from 'lucide-react';
+import { CheckCircle2, ShoppingBag, ArrowLeft, Loader2, MapPin, Store, AlertCircle, Info, Sparkles } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { apiService } from '../services/api';
 import { formatPrice } from '../lib/utils';
@@ -51,12 +51,21 @@ export const CheckoutPage: React.FC = () => {
             </div>
 
             <div>
-              <span className="text-xs uppercase tracking-[0.3em] text-[#7E7066] block mb-1">
-                Заказ успешно принят
-              </span>
+              <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-amber-900 text-[11px] font-medium uppercase tracking-wider mb-3">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Демонстрация оформления</span>
+              </div>
               <h1 className="font-serif text-3xl sm:text-4xl text-[#30251F]">
-                Спасибо за заказ!
+                Тестовый заказ сформирован
               </h1>
+            </div>
+
+            {/* Clear Portfolio Notice */}
+            <div className="bg-amber-50/80 border border-amber-200 rounded-2xl p-4 text-xs text-amber-950 text-left flex items-start space-x-3">
+              <Info className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+              <div className="leading-relaxed">
+                <strong>Обратите внимание:</strong> это портфолио-демонстрация интерфейса. Реальное списание средств не производится, курьер не вызывается. Данные заказа сохранены в локальном хранилище вашего браузера.
+              </div>
             </div>
 
             <div className="bg-[#F6F2EA]/70 p-5 rounded-2xl border border-[#D8C6AE]/40 text-left space-y-2 text-sm">
@@ -90,22 +99,18 @@ export const CheckoutPage: React.FC = () => {
               </div>
             </div>
 
-            <p className="text-xs sm:text-sm text-[#7E7066] font-light leading-relaxed">
-              Наш бариста уже начал собирать ваш заказ. Мы свяжемся с вами по указанному телефону при необходимости.
-            </p>
-
             <div className="pt-4 flex flex-col sm:flex-row gap-3 justify-center">
-              <button
-                onClick={() => navigate('/menu')}
+              <Link
+                to="/admin"
                 className="px-8 py-3.5 bg-[#30251F] text-[#F6F2EA] rounded-full text-xs uppercase tracking-widest hover:bg-[#221A15] transition-all"
               >
-                Вернуться в меню
-              </button>
+                Посмотреть в демо-панели
+              </Link>
               <button
-                onClick={() => navigate('/')}
+                onClick={() => navigate('/menu')}
                 className="px-8 py-3.5 bg-stone-100 text-[#30251F] rounded-full text-xs uppercase tracking-widest hover:bg-stone-200 transition-all"
               >
-                На главную
+                Вернуться в меню
               </button>
             </div>
           </div>
@@ -149,7 +154,7 @@ export const CheckoutPage: React.FC = () => {
       setCompletedOrder(newOrder);
     } catch (err: unknown) {
       console.error('Order creation failed:', err);
-      const message = err instanceof Error ? err.message : 'Не удалось сохранить заказ. Попробуйте снова.';
+      const message = err instanceof Error ? err.message : 'Не удалось сохранить тестовый заказ. Попробуйте снова.';
       setError(message);
     } finally {
       setLoading(false);
@@ -167,9 +172,17 @@ export const CheckoutPage: React.FC = () => {
           <span>Вернуться в корзину</span>
         </Link>
 
+        {/* Demo banner */}
+        <div className="mb-6 p-4 rounded-2xl bg-amber-50/80 border border-amber-200 text-xs text-amber-950 flex items-start space-x-3">
+          <Info className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
+          <p className="leading-relaxed">
+            <strong>Демо-режим:</strong> это демонстрационный интерфейс для портфолио. Вы можете заполнить форму любыми тестовыми данными. Оплата не требуется, данные сохраняются локально.
+          </p>
+        </div>
+
         <div className="border-b border-[#D8C6AE]/30 pb-4 mb-8">
           <span className="text-xs uppercase tracking-[0.3em] text-[#7E7066] block mb-1">
-            Завершение покупки
+            Демонстрация покупки
           </span>
           <h1 className="font-serif text-3xl sm:text-4xl text-[#30251F]">Оформление заказа</h1>
         </div>
@@ -221,7 +234,7 @@ export const CheckoutPage: React.FC = () => {
                   <div>
                     <div className="font-medium text-sm text-[#30251F]">Доставка</div>
                     <div className="text-xs text-[#7E7066] mt-0.5 font-light">
-                      Курьером по городу (до 45 мин)
+                      Курьером по городу (демо-расчёт)
                     </div>
                   </div>
                 </button>
@@ -284,7 +297,7 @@ export const CheckoutPage: React.FC = () => {
               {/* Comment */}
               <div>
                 <label className="block text-xs uppercase tracking-wider text-[#7E7066] mb-1 font-medium">
-                  Комментарий к заказу (пожелания, время, аллергии)
+                  Комментарий к заказу
                 </label>
                 <textarea
                   rows={3}
@@ -322,7 +335,7 @@ export const CheckoutPage: React.FC = () => {
                 </div>
                 <div className="flex justify-between">
                   <span>Доставка:</span>
-                  <span className="font-medium text-emerald-700">Бесплатно</span>
+                  <span className="font-medium text-emerald-700">0 ₸ (Демо)</span>
                 </div>
                 <div className="pt-2 border-t border-[#D8C6AE]/20 flex justify-between items-baseline">
                   <span className="text-base font-medium text-[#30251F]">К оплате:</span>
@@ -343,12 +356,12 @@ export const CheckoutPage: React.FC = () => {
                     <span>Сохранение...</span>
                   </>
                 ) : (
-                  <span>Подтвердить заказ</span>
+                  <span>Оформить тестовый заказ</span>
                 )}
               </button>
 
               <p className="text-[10px] text-center text-[#7E7066] leading-relaxed">
-                Нажимая кнопку, вы подтверждаете согласие на обработку заказа. Оплата производится при получении картой или наличными.
+                Демонстрация для портфолио. Настоящие платежи и звонки не совершаются.
               </p>
             </div>
           </div>
