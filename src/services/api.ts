@@ -3,7 +3,7 @@ import type { Product, Order } from '../types';
 import { INITIAL_PRODUCTS } from '../data/products';
 import { generateOrderNumber } from '../lib/utils';
 
-const LOCAL_PRODUCTS_KEY = 'atelier_coffee_products_v1';
+const LOCAL_PRODUCTS_KEY = 'atelier_coffee_products_v2';
 const LOCAL_ORDERS_KEY = 'atelier_coffee_orders_v1';
 
 // Initial seed helper for local demo

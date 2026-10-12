@@ -51,9 +51,9 @@ export const INITIAL_PRODUCTS: Product[] = [
   },
   {
     id: 'prod-5',
-    name: 'Лавандовый Раф',
+    name: 'Лавандовый рафф',
     description: 'Нежнейший кофейный десертный напиток со взбитыми сливками и натуральной крымской лавандой.',
-    price: 2600,
+    price: 1999,
     category: 'coffee',
     imageUrl: 'https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=800&q=80',
     isAvailable: true,
